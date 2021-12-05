@@ -24,6 +24,10 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { EventCardLiteComponent } from './pages/home/list-event/event-card-lite/event-card-lite.component';
 import { EventCardPanierComponent } from './pages/home/list-event/event-card-panier/event-card-panier.component';
 import { TestComponent } from './pages/home/test/test.component';
+import { LivraisonConnectionComponent } from './pages/home-livraison/livraison-connection/livraison-connection.component';
+import { LivraisonConnectedComponent } from './pages/home-livraison/livraison-connected/livraison-connected.component';
+import { LivraisonHomeComponent } from './pages/home-livraison/livraison-home/livraison-home.component';
+import { LivraisonCommandeSelecComponent } from './pages/home-livraison/livraison-commande-selec/livraison-commande-selec.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { TestComponent } from './pages/home/test/test.component';
     ConnectedComponent,
     EventCardLiteComponent,
     EventCardPanierComponent,
-    TestComponent
+    TestComponent,
+    LivraisonConnectionComponent,
+    LivraisonConnectedComponent,
+    LivraisonHomeComponent,
+    LivraisonCommandeSelecComponent
   ],
     imports: [
         BrowserModule,
