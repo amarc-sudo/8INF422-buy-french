@@ -23,6 +23,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { EventCardLiteComponent } from './pages/home/list-event/event-card-lite/event-card-lite.component';
 import { EventCardPanierComponent } from './pages/home/list-event/event-card-panier/event-card-panier.component';
+import { TestComponent } from './pages/home/test/test.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EventCardPanierComponent } from './pages/home/list-event/event-card-pan
     ListCardComponent,
     ConnectedComponent,
     EventCardLiteComponent,
-    EventCardPanierComponent
+    EventCardPanierComponent,
+    TestComponent
   ],
     imports: [
         BrowserModule,
