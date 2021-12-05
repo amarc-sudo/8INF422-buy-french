@@ -1,6 +1,3 @@
 [submodule "spring"]
 	path = spring
 	url = ./springboot
-[submodule "angular"]
-	path = angular
-	url = ./angular
