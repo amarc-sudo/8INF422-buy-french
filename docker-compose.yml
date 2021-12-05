@@ -15,6 +15,7 @@ services:
             MARIADB_USER: u8inf422
             MARIADB_PASSWORD: ThisBePassword
             MARIADB_DATABASE: u8inf422
+            MARIADB_ROOT_PASSWORD: ThisBeRootPassword
         restart: always
         
     french-buy-logic:
