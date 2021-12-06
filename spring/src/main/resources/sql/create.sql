@@ -33,7 +33,8 @@ CREATE TABLE `userType` (
 CREATE TABLE `seller` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` text NOT NULL,
-  `address` text NOT NULL
+  `lat` double NOT NULL,
+  `long` double NOT NULL
 );
 
 CREATE TABLE `command` (
