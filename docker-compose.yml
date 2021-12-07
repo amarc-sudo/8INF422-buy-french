@@ -4,7 +4,7 @@ volumes:
     volume-mariaDB:
     
 services:
-    db:
+    french-buy-DB:
         image: mariadb:10.7.1-focal
         container_name: french-buy-DB
         ports:
@@ -17,7 +17,7 @@ services:
             MARIADB_DATABASE: u8inf422
             MARIADB_ROOT_PASSWORD: ThisBeRootPassword
         restart: always
-        
+            
     french-buy-logic:
         build: ./spring
         container_name: french-buy-logic
@@ -30,16 +30,14 @@ services:
         ports:
             - 8080:8080
         links:
-            - db
-        depends_on:
-            - db
+            - french-buy-DB
         
     french-buy-ui:
         build: ./angulars
         container_name: french-buy-ui
-        links:
-            - french-buy-logic
         depends_on:
-            - french-buy-logic
+            - "french-buy-logic"
         ports:
             - 4200:4200
+        links:
+            - french-buy-logic

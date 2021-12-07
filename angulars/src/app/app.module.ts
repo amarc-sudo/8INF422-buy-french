@@ -52,6 +52,10 @@ import { LivraisonCommandeSelecComponent } from './pages/home-livraison/livraiso
                 path: '',
                 component: HomepageComponent
             },
+            {
+              path: 'livraison',
+              component: LivraisonHomeComponent
+            },
         ]),
         NgbModule,
         BrowserAnimationsModule,
