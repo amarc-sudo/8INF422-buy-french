@@ -22,10 +22,8 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@types/googlemaps": "^3.43.3",
     "bootstrap": "^4.5.0",
-    "rxjs": "^6.6.7",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
     "ng": "^0.0.0",
     "ng-bootstrap": "^1.6.3",
     "ng-drag-drop": "^5.0.0",
@@ -33,7 +31,10 @@
     "ngx-bootstrap": "^6.2.0",
     "ngx-order-pipe": "^2.1.1",
     "ngx-toastr": "^13.1.0",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "rxjs": "^6.6.7",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.6",
