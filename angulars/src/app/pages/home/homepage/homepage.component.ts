@@ -12,4 +12,10 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isConnect() {
+    if(localStorage.getItem("isConnect"))
+      return true
+    else
+      return false
+  }
 }

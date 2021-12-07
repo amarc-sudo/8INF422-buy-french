@@ -1,38 +1,42 @@
+<mat-toolbar color="primary">
+  <div mat-card-avatar class="example-header-image"><img src="favicon.ico"></div>
+  <span>French buy</span>
+</mat-toolbar>
 
-  <mat-toolbar color="primary">
-    <div mat-card-avatar class="example-header-image"><img src="favicon.ico"></div>
-    <span>French buy</span>
-  </mat-toolbar>
-
-  <div class="row">
-    <div class="col-4">
+<div class="row">
+  <div class="col-4">
+    <div *ngIf="isConnect()">
       <app-connected class="align-content-center align-items-center text-center justify-content-center"></app-connected>
     </div>
-    <div class="col-8">
-      <br/>
-      <div class="row">
-        <div class="col-2">
-          <mat-form-field appearance="fill">
-            <mat-label>Trier par :</mat-label>
-            <mat-select>
-              <mat-option>Trier par :</mat-option>
-              <mat-option value="one">Fromage</mat-option>
-              <mat-option value="two">Conserve</mat-option>
-              <mat-option value="two">Patisserie/Boulangerie</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col-8">
-        </div>
-        <div class="col-2" >
-          <mat-form-field appearance="fill">
-            <mat-label>Rechercher</mat-label>
-            <input matInput>
-          </mat-form-field>
-        </div>
-      </div>
-      <br/>
-      <app-list-card></app-list-card>
+    <div *ngIf="!isConnect()">
+      <app-login-form class="align-content-center align-items-center text-center justify-content-center"></app-login-form>
     </div>
   </div>
+  <div class="col-8">
+    <br/>
+    <div class="row">
+      <div class="col-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Trier par :</mat-label>
+          <mat-select>
+            <mat-option>Trier par :</mat-option>
+            <mat-option value="one">Fromage</mat-option>
+            <mat-option value="two">Conserve</mat-option>
+            <mat-option value="two">Patisserie/Boulangerie</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-8">
+      </div>
+      <div class="col-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Rechercher</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <br/>
+    <app-list-card></app-list-card>
+  </div>
+</div>
 

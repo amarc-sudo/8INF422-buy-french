@@ -12,16 +12,16 @@
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <mat-form-field appearance="fill">
         <mat-label>username/mail</mat-label>
-        <input matInput id="login"/>
+        <input matInput required [(ngModel)]="email" id="login"/>
       </mat-form-field>
     </div>
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <mat-form-field appearance="fill">
         <mat-label>password</mat-label>
-        <input matInput id="passwd" type="password"/>
+        <input matInput required [(ngModel)]="password" id="passwd" type="password"/>
       </mat-form-field>
     </div><br/><br/>
-     <button mat-raised-button color="primary">Connection</button><br/><br/>
+     <button mat-raised-button color="primary" type="submit" (click)="connection()">Connection</button><br/><br/>
      <button mat-raised-button color="primary">mot de passe oublié</button><br/><br/>
      <button routerLink="/livraison" mat-raised-button color="primary">Vous ètes livreurs ?</button>
   </mat-tab>

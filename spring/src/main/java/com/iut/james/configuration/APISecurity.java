@@ -17,4 +17,5 @@ public class APISecurity extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/**");
     }
 
+
 }

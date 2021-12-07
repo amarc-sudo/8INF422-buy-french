@@ -33,6 +33,7 @@ import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livra
 import {ListCardPanierComponent} from "./pages/home/list-event/list-card-panier/list-card-panier.component";
 
 import { GoogleMapsModule } from '@angular/google-maps'
+import {FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +80,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
     MatOptionModule,
     MatExpansionModule,
     GoogleMapsModule,
+    FormsModule,
   ],
   providers: [ HttpClientModule ],
   bootstrap: [AppComponent]

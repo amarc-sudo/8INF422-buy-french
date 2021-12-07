@@ -18,16 +18,16 @@
         <p>Nom Prenom :</p><br/>
         <p>Adresse Mail :</p><br/>
         <p>Numero de telephone :</p><br/>
-        <p>Membre depuis :</p><br/>
+
 
 
       </div>
       <div class="col-5" style="text-align: right">
-        <br/>
-        <p>Florian PROFI</p><br/>
-        <p>flo.p@gmail.com</p><br/>
-        <p>(418) 514 - 5241</p><br/>
-        <p>2021-08-15</p><br/>
+
+        <p>{{this.userConnected.firstName}} {{this.userConnected.lastName}}</p><br/>
+        <p>{{userConnected.mail}}</p><br/>
+        <p>{{userConnected.phone}}</p><br/>
+
       </div>
     </div>
     <button mat-raised-button color="primary">Changer de mot de passe</button>
