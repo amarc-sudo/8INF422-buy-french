@@ -34,7 +34,6 @@ import {ListCardPanierComponent} from "./pages/home/list-event/list-card-panier/
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ListCardLivraisonComponent } from './pages/home/list-event/list-card-livraison/list-card-livraison.component';
 import { ListCardHistoryComponent } from './pages/home/list-event/list-card-history/list-card-history.component';
-import { ListHistoryComponent } from './pages/home/list-event/list-history/list-history.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +54,6 @@ import { ListHistoryComponent } from './pages/home/list-event/list-history/list-
     LivraisonHomeDisconnectedComponent,
     ListCardLivraisonComponent,
     ListCardHistoryComponent,
-    ListHistoryComponent
 
   ],
   imports: [
