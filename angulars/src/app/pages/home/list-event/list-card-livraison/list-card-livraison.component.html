@@ -1,0 +1,7 @@
+<div class="recap" *ngIf="list$ ">
+  <div *ngFor="let element of list$">
+    <app-event-card-livraison [product]="element"></app-event-card-livraison>
+    <br/>
+  </div>
+</div>
+<h1>Total : {{total()}}$</h1>

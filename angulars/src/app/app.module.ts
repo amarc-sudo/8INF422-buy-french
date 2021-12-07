@@ -31,8 +31,9 @@ import { LivraisonCommandeSelecComponent } from './pages/home-livraison/livraiso
 import { EventCardLivraisonComponent } from './pages/home/list-event/event-card-livraison/event-card-livraison.component';
 import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livraison-home-disconnected/livraison-home-disconnected.component';
 import {ListCardPanierComponent} from "./pages/home/list-event/list-card-panier/list-card-panier.component";
-
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { ListCardLivraisonComponent } from './pages/home/list-event/list-card-livraison/list-card-livraison.component';
+import { ListCardHistoryComponent } from './pages/home/list-event/list-card-history/list-card-history.component';
 import {FormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
