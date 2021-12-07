@@ -22,12 +22,14 @@ public class UserService {
 
     public User login(String login, String password) {
         String passwordCrypt = "";
+        User salt = userDao.findByMail(login);
         try {
-            passwordCrypt = Cryptage.crypteString(password, userDao.getSaltByMail(login));
+            if(salt != null)
+                passwordCrypt = Cryptage.crypteString(password, salt.getSalt());
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-
-        return userDao.getUserByPasswordAndMailAndTypeID(login, passwordCrypt, userTypeDao.getUserTypeByType("user"));
+        User user = userDao.findUserByPasswordAndMailAndTypeID(passwordCrypt, login, userTypeDao.getUserTypeByType("user"));
+        return user;
     }
 }
