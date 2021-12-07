@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {product} from "../../../../api/objects/product";
 
 @Component({
   selector: 'app-event-card-lite',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventCardLiteComponent implements OnInit {
 
+  @Input()
+  product: product | undefined;
   constructor() { }
 
   ngOnInit(): void {

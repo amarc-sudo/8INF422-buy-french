@@ -48,6 +48,7 @@ import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livra
     LivraisonCommandeSelecComponent,
     EventCardLivraisonComponent,
     LivraisonHomeDisconnectedComponent
+
   ],
     imports: [
         BrowserModule,

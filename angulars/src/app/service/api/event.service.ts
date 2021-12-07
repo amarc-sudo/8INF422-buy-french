@@ -15,7 +15,7 @@ export class EventService extends ParentApiService {
   }
 
   listEvent(): Observable<product[]> {
-    return this.httpClient.get<product[]>(environment.apiUrl + '/rest/api/product/getAll');
+    return this.httpClient.get<product[]>(environment.apiUrl + '/rest/api/product/getall');
   }
 
 }

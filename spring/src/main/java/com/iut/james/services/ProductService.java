@@ -4,7 +4,6 @@ import com.iut.james.beans.Product;
 import com.iut.james.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -18,6 +17,9 @@ public class ProductService {
 
 
     public List<Product> getProducts(){
+
+        List<Product>products=productRepository.findAll();
+        System.out.println(products);
         return productRepository.findAll();
     }
 }
