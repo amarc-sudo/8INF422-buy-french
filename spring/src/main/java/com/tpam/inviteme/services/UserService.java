@@ -23,19 +23,4 @@ public class UserService {
     @Autowired
     private IUserDao userDao;
 
-    @Autowired
-    private IPersonDao personDao;
-
-    @Autowired
-    private TokenConnexionService tokenConnexionService;
-
-    public Person login(String login, String password) throws NoSuchAlgorithmException {
-        String encryptedPassword = Cryptage.crypteString(password);
-        Person person = personDao.login(login, encryptedPassword);
-        if(person != null) {
-            person.setToken(tokenConnexionService.generateToken(login).getToken());
-        }
-        return person;
-    }
-
 }

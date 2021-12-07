@@ -1,8 +1,5 @@
 package com.tpam.inviteme.controller;
 
-import com.tpam.inviteme.beans.Person;
-import com.tpam.inviteme.services.EventInfoService;
-import com.tpam.inviteme.services.UserService;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -10,6 +10,7 @@ public class Cryptage {
 
     }
 
+
     public static final String SALT = "aoi";
 
     public static String crypteString(String password) throws NoSuchAlgorithmException {
