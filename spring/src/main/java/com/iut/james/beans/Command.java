@@ -1,7 +1,11 @@
 package com.iut.james.beans;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "command")
@@ -21,6 +25,16 @@ public class Command {
     @ManyToOne
     @JoinColumn(name = "idDeliver")
     private User idDeliver;
+
+    @Getter
+    @Setter
+    @ManyToMany(cascade = {CascadeType.PERSIST})
+    @JoinTable(
+            name = "productCommand",
+            joinColumns = @JoinColumn(name = "commandID", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "productID", referencedColumnName = "id")
+    )
+    private List<Product> products = new java.util.ArrayList<>();
 
     public User getIdDeliver() {
         return idDeliver;

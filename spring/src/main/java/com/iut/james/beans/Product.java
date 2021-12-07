@@ -33,6 +33,8 @@ public class Product {
     @JoinColumn(name = "idSeller", nullable = false)
     private Seller idSeller;
 
+
+
     public Seller getIdSeller() {
         return idSeller;
     }

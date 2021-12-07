@@ -1,11 +1,11 @@
 package com.iut.james.services;
 
 import com.iut.james.beans.Command;
-import com.iut.james.beans.Product;
 import com.iut.james.beans.User;
 import com.iut.james.dao.CommandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -21,5 +21,11 @@ public class CommandService {
         List<Command>products=commandRepository.findAllbyidUserOrderByDate(mapInformations);
         System.out.println(products);
         return commandRepository.findAllbyidUserOrderByDate(mapInformations);
+    }
+
+    public List<Command> getAllCommand() {
+        List<Command>products=commandRepository.findAll();
+        System.out.println(products.toString());
+        return products;
     }
 }

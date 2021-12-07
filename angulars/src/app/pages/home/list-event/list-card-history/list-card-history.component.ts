@@ -4,6 +4,7 @@ import {EventService} from "../../../../service/api/event.service";
 import {command} from "../../../../api/objects/command";
 import {element} from "protractor";
 import {product} from "../../../../api/objects/product";
+import {user} from "../../../../api/objects/User";
 
 @Component({
   selector: 'app-list-card-history',
@@ -15,12 +16,17 @@ export class ListCardHistoryComponent implements OnInit {
 
   list$: Observable<command[]> | undefined;
   listProd: Observable<product[]> | undefined;
+// @ts-ignore
+  userConnected: user;
+
 
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
-    this.list$ = this.eventService.listCommand()
-
+    let objLinea = localStorage.getItem("user");
+    console.log('test');
+    this.userConnected = JSON.parse(<string>objLinea);
+    this.list$ = this.eventService.listCommand(this.userConnected);
   }
 
 }

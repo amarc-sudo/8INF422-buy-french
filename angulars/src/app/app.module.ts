@@ -52,8 +52,9 @@ import {FormsModule} from "@angular/forms";
     LivraisonHomeComponent,
     LivraisonCommandeSelecComponent,
     EventCardLivraisonComponent,
-    LivraisonHomeDisconnectedComponent
-
+    LivraisonHomeDisconnectedComponent,
+    ListCardLivraisonComponent,
+    ListCardHistoryComponent
   ],
   imports: [
     BrowserModule,

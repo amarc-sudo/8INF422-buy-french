@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
 import {product} from "../../api/objects/product";
 import {command} from "../../api/objects/command";
+import {user} from "../../api/objects/User";
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class EventService extends ParentApiService {
     return this.httpClient.get<product[]>(environment.apiUrl + '/rest/api/product/getall');
   }
 
-  listCommand(): Observable<command[]> {
-  return this.httpClient.get<command[]>(environment.apiUrl + '/rest/api/command/getHistory');
+  listCommand(users:user): Observable<Array<command>> {
+  return this.httpClient.post<Array<command>>(environment.apiUrl + '/rest/api/command/getHistory',users);
   }
 
 }
