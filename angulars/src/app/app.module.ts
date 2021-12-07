@@ -30,6 +30,7 @@ import { LivraisonHomeComponent } from './pages/home-livraison/livraison-home/li
 import { LivraisonCommandeSelecComponent } from './pages/home-livraison/livraison-commande-selec/livraison-commande-selec.component';
 import { EventCardLivraisonComponent } from './pages/home/list-event/event-card-livraison/event-card-livraison.component';
 import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livraison-home-disconnected/livraison-home-disconnected.component';
+import {ListCardPanierComponent} from "./pages/home/list-event/list-card-panier/list-card-panier.component";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livra
     LoginFormComponent,
     EventCardComponent,
     ListCardComponent,
+    ListCardPanierComponent,
     ConnectedComponent,
     EventCardLiteComponent,
     EventCardPanierComponent,
