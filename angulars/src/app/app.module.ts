@@ -30,7 +30,7 @@ import { LivraisonHomeComponent } from './pages/home-livraison/livraison-home/li
 import { LivraisonCommandeSelecComponent } from './pages/home-livraison/livraison-commande-selec/livraison-commande-selec.component';
 import { EventCardLivraisonComponent } from './pages/home/list-event/event-card-livraison/event-card-livraison.component';
 import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livraison-home-disconnected/livraison-home-disconnected.component';
-
+import { GoogleMapsModule } from '@angular/google-maps'
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,32 +50,33 @@ import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livra
     LivraisonHomeDisconnectedComponent
 
   ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot([
-            {
-                path: '',
-                component: HomepageComponent
-            },
-            {
-              path: 'livraison',
-              component: LivraisonHomeComponent
-            },
-        ]),
-        NgbModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatCardModule,
-        HttpClientModule,
-        MatTabsModule,
-        MatSlideToggleModule,
-        MatToolbarModule,
-        MatSelectModule,
-        MatOptionModule,
-        MatExpansionModule,
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: HomepageComponent
+      },
+      {
+        path: 'livraison',
+        component: LivraisonHomeComponent
+      },
+    ]),
+    NgbModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatExpansionModule,
+    GoogleMapsModule,
+  ],
   providers: [ HttpClientModule ],
   bootstrap: [AppComponent]
 })
