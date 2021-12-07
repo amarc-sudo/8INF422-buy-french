@@ -3,6 +3,7 @@ import {ParentApiService} from "./parent.api.service";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
+import {product} from "../../api/objects/product";
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class EventService extends ParentApiService {
     super();
   }
 
-  listEvent(): Observable<Event[]> {
-    return this.httpClient.get<Event[]>(environment.apiUrl + '/rest/api/event/getAll');
+  listEvent(): Observable<product[]> {
+    return this.httpClient.get<product[]>(environment.apiUrl + '/rest/api/product/getAll');
   }
 
 }
