@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Event} from "../../../../api/objects/Event";
 
 @Component({
   selector: 'app-event-card',

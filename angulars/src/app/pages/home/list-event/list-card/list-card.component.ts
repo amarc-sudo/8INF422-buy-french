@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "../../../../service/api/event.service";
 import {Observable} from "rxjs";
-import {Event} from "../../../../api/objects/Event";
 
 @Component({
   selector: 'app-list-card',

@@ -3,7 +3,6 @@ import {ParentApiService} from "./parent.api.service";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
-import {Event} from "../../api/objects/Event";
 
 @Injectable({
   providedIn: 'root'
