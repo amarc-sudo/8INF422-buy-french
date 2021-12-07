@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-
+import {product} from "../../../../api/objects/product";
 @Component({
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class EventCardComponent implements OnInit {
 
   @Input()
-  event: Event | undefined;
+  product: product | undefined;
 
   constructor() { }
 

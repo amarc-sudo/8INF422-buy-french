@@ -1,6 +1,6 @@
-<div class="recap" *ngIf="list$ | async as etudiant">
-  <div *ngFor="let element of etudiant">
-    <app-event-card [event]="element"></app-event-card>
+<div class="recap" *ngIf="list$ | async as product">
+  <div *ngFor="let element of product">
+    <app-event-card [product]="element"></app-event-card>
     <br/>
   </div>
 </div>

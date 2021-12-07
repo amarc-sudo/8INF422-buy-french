@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "../../../../service/api/event.service";
 import {Observable} from "rxjs";
+import {product} from "../../../../api/objects/product";
 
 @Component({
   selector: 'app-list-card',
@@ -9,7 +10,7 @@ import {Observable} from "rxjs";
 })
 export class ListCardComponent implements OnInit {
 
-  list$: Observable<Event[]> | undefined;
+  list$: Observable<product[]> | undefined;
 
   constructor(private eventService: EventService) { }
 
