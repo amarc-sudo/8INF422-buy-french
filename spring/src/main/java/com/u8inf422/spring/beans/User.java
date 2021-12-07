@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -42,7 +43,10 @@ public class User {
     private String phone;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "typeID", nullable = false)
+    @JoinColumn(name = "id", nullable = false)
     private UserType typeID;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id")
+    private Set<Command> command;
 }

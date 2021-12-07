@@ -25,9 +25,9 @@ public class UserController {
 
     @PostMapping("login")
     @ApiOperation("Renvoie un professeur qui a le login et le mot de passe donnés en paramètre")
-    public boolean readByLoginAndPassword(@RequestBody Map<String, String> mapInformations) throws NoSuchAlgorithmException {
+    public User readByLoginAndPassword(@RequestBody Map<String, String> mapInformations) throws NoSuchAlgorithmException {
         String login = mapInformations.get("email");
         String password = mapInformations.get("password");
-        return true;
+        return userService.login(login, password);
     }
 }

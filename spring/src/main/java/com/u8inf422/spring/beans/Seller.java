@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,5 +28,8 @@ public class Seller {
     @Column(name = "`long`", nullable = false)
     private Double _long;
 
+    @OneToMany
+    @JoinColumn(name = "id")
+    private Set<Product> product;
 
 }

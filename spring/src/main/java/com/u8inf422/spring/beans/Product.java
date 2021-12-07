@@ -30,8 +30,8 @@ public class Product {
     @Column(name = "photo", nullable = false)
     private String photo;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "idSeller", nullable = false)
+    @OneToOne
+    @JoinColumn(name = "id", nullable = false)
     private Seller idSeller;
 
 }
