@@ -1,10 +1,10 @@
-export class User{
-  idUser : number;
-  email : string;
-  surname : string;
-  password : string;
-  createDate: Date;
-  idStatut: number;
-  echecConnection : number;
-  lastConnection: Date;
+export class user{
+id!:number;
+firstName!:string;
+lastName!:string;
+salt!:string;
+password!:string;
+mail!:string;
+phone!:string;
+typeId!:number;
 }
