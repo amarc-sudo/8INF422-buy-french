@@ -32,6 +32,7 @@ import { EventCardLivraisonComponent } from './pages/home/list-event/event-card-
 import { LivraisonHomeDisconnectedComponent } from './pages/home-livraison/livraison-home-disconnected/livraison-home-disconnected.component';
 import {ListCardPanierComponent} from "./pages/home/list-event/list-card-panier/list-card-panier.component";
 
+import { GoogleMapsModule } from '@angular/google-maps'
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,32 +53,33 @@ import {ListCardPanierComponent} from "./pages/home/list-event/list-card-panier/
     LivraisonHomeDisconnectedComponent
 
   ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot([
-            {
-                path: '',
-                component: HomepageComponent
-            },
-            {
-              path: 'livraison',
-              component: LivraisonHomeComponent
-            },
-        ]),
-        NgbModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatCardModule,
-        HttpClientModule,
-        MatTabsModule,
-        MatSlideToggleModule,
-        MatToolbarModule,
-        MatSelectModule,
-        MatOptionModule,
-        MatExpansionModule,
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: HomepageComponent
+      },
+      {
+        path: 'livraison',
+        component: LivraisonHomeComponent
+      },
+    ]),
+    NgbModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatExpansionModule,
+    GoogleMapsModule,
+  ],
   providers: [ HttpClientModule ],
   bootstrap: [AppComponent]
 })
