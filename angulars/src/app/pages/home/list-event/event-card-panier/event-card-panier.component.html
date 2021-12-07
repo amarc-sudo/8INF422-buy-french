@@ -8,7 +8,9 @@
       <img mat-card-image src="{{product?.photo}}" alt="image d'illustration"
            style="width: 40%" class="align-content-center align-items-center text-center justify-content-center">
     </mat-card-content>
+  Prix : {{product?.price}} $
   <mat-card-actions  class="align-content-center align-items-center text-center justify-content-center">
-    Prix : {{product?.price}} $     <button mat-raised-button color="primary">Retirer du panier</button>
+        <button mat-raised-button color="primary" (click)="removePanier()" id="remove">retirer du panier</button>
   </mat-card-actions>
+  <button  (click)="removePanier()"> test</button>
 </mat-card>

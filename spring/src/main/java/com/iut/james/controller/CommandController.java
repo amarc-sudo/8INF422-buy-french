@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("rest/api/Command")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @Slf4j
 public class CommandController {
 

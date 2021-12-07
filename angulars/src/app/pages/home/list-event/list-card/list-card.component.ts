@@ -11,10 +11,33 @@ import {product} from "../../../../api/objects/product";
 export class ListCardComponent implements OnInit {
 
   list$: Observable<product[]> | undefined;
+  panier:Array<product> | any;
 
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
     this.list$ = this.eventService.listEvent()
+    if(localStorage.getItem('isConnect')){
+      if(localStorage.getItem('panier')){
+
+      }else{
+        let products:Array<product>;
+        products=new Array<product>();
+        let objLinea = JSON.stringify(products);
+        localStorage.setItem("panier",objLinea);
+      }
+    }
+  }
+
+  addToPanier($event: any, index: number) {
+    console.log($event)
+    let products:Array<product>;
+    let objLinea = localStorage.getItem("panier");
+    products = JSON.parse(<string>objLinea);
+    if ($event && products[index] == null) {
+      products.push($event);
+    }
+    objLinea = JSON.stringify(products);
+    localStorage.setItem("panier",objLinea);
   }
 }

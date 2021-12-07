@@ -1,6 +1,6 @@
 <div class="recap" *ngIf="list$ ">
-  <div *ngFor="let element of list$">
-    <app-event-card-panier [product]="element"></app-event-card-panier>
+  <div *ngFor="let element of list$; index as indexOfRemove">
+    <app-event-card-panier [product]="element" (removeFromPaniers)="removeFromPanier(indexOfRemove)" ></app-event-card-panier>
     <br/>
   </div>
 </div>

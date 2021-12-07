@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {product} from "../../../../api/objects/product";
+import { EventEmitter } from '@angular/core';
+
 @Component({
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
@@ -8,32 +10,17 @@ import {product} from "../../../../api/objects/product";
 export class EventCardComponent implements OnInit {
 
   @Input()
-  product: product | undefined;
+  product: product | any;
 
+  @Output() productUser = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {}
 
   addPanier():void{
-    if(localStorage.getItem('panier')){
-      let products:Array<product>;
-      let objLinea = localStorage.getItem("panier");
-      products = JSON.parse(<string>objLinea);
-      if (this.product) {
-        products.push(this.product);
-      }
-      objLinea = JSON.stringify(products);
-      localStorage.setItem("panier",objLinea);
-    }else {
-      let products:Array<product>;
-      products=new Array<product>();
-      if (this.product instanceof product) {
-        products.push(this.product);
-      }
-      let objLinea = JSON.stringify(products);
-      localStorage.setItem("panier",objLinea);
-    }
+    console.log('panier');
+    this.productUser.emit(this.product);
   }
 
 
