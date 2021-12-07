@@ -1,0 +1,23 @@
+<div class="recap" *ngIf="list$ | async as command">
+  <div *ngFor="let element of command">
+
+    <mat-expansion-panel >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{element.date}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="recap" *ngIf="listProd | async as product">
+        <div *ngFor="let element of product">
+          <app-event-card-lite [product]="element"></app-event-card-lite>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+  </div>
+</div>
+
+
+
+
