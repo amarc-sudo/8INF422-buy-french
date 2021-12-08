@@ -1,3 +1,5 @@
+import {userType} from "./userType";
+
 export class user{
 id!:number;
 firstName!:string;
@@ -6,5 +8,5 @@ salt!:string;
 password!:string;
 mail!:string;
 phone!:string;
-typeId!:number;
+typeId!:userType;
 }

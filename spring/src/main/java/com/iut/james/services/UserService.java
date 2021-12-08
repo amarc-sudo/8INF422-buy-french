@@ -32,4 +32,19 @@ public class UserService {
         User user = userDao.findUserByPasswordAndMailAndTypeID(passwordCrypt, login, userTypeDao.getUserTypeByType("user"));
         return user;
     }
+
+    public void generateUser(User user) {
+        String passwordCrypt = "";
+        String salt = "oui";
+        try {
+            if(salt != null)
+                passwordCrypt = Cryptage.crypteString(user.getPassword(), salt);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        user.setPassword(passwordCrypt);
+        user.setSalt(salt);
+        user.setTypeID(userTypeDao.getUserTypeByType("user"));
+        userDao.save(user);
+    }
 }
