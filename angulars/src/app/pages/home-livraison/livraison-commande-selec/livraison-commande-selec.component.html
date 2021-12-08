@@ -5,9 +5,17 @@
 
   </mat-card-header><br/>
   <mat-card-content>
-    <div>
-      <google-map></google-map>
+    <div class="row">
+    <div class="col-6">
+    <div class="align-content-center align-items-center">
+      <google-map [options]="mapOptions" width="100%">
+        <map-marker [position]="marker.position"></map-marker>
+        <map-marker [position]="marker2.position"></map-marker>
+      </google-map>
     </div><br/>
+    </div>
+    <div class="col-6">
+
     <mat-card class="example-card" style="background-color: #adadad">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"><img src="../../../../favicon.ico"></div>
@@ -15,6 +23,8 @@
       </mat-card-header><br/>
       <app-list-card-livraison [products]="command?.products"></app-list-card-livraison>
     </mat-card>
+    </div>
+    </div>
   </mat-card-content>
   <mat-card-actions  class="align-content-center align-items-center text-center justify-content-center">
     <button mat-raised-button color="primary">Valider la commande</button>
