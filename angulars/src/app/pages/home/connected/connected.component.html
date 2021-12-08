@@ -1,38 +1,34 @@
 <mat-tab-group dynamicHeight mat-align-tabs="center" style="padding: 10px">
   <mat-tab label="Mon panier"><br/>
-    <h1>Liste des articles</h1>
+    <h1 class="title">Liste des articles</h1>
     <app-list-card-panier></app-list-card-panier>
 
 
   </mat-tab>
 
 
-  <mat-tab label="Profil" ><br/>  <h1>Profil</h1> <br/>
+  <mat-tab label="Profil" ><br/>  <h1 class="title">Profil</h1> <br/>
 
     <img src="https://cdn.vox-cdn.com/thumbor/yyConGdwpTNyIBv-hN5Y1xQ2UPs=/72x0:779x471/1400x1400/filters:focal(72x0:779x471):format(png)/cdn.vox-cdn.com/assets/1279916/rickroll2.png" alt="Avatar" style="width:100px;  border-radius: 50%; border: 1px solid black">
 
-    <div class="row" style="padding-top: 50px">
-      <div class="col-6" style="text-align: left">
-
-        <p>Nom Prenom :</p><br/>
-        <p>Adresse Mail :</p><br/>
-        <p>Numero de telephone :</p><br/>
-
-
-
+    <div class="row" style="padding-top: 30px">
+      <div class="col-6 subTitle" style="text-align: right">
+        <p>Nom Prenom :</p>
+        <p>Adresse Mail :</p>
+        <p>Numero de telephone :</p>
       </div>
-      <div class="col-5" style="text-align: right">
+      <div class="col-5" style="text-align: left">
 
-        <p>{{this.userConnected.firstName}} {{this.userConnected.lastName}}</p><br/>
-        <p>{{userConnected.mail}}</p><br/>
-        <p>{{userConnected.phone}}</p><br/>
+        <p>{{this.userConnected.firstName}} {{this.userConnected.lastName}}</p>
+        <p>{{userConnected.mail}}</p>
+        <p>{{userConnected.phone}}</p>
 
       </div>
     </div>
     <button mat-raised-button color="primary">Changer de mot de passe</button>
   </mat-tab>
 
-  <mat-tab label="Ancienne commande"><br/>
+  <mat-tab label="Ancienne commande"><br/> <h1 class="title">Ancienne commande</h1> <br/>
     <app-list-card-history></app-list-card-history>
   </mat-tab>
 </mat-tab-group>

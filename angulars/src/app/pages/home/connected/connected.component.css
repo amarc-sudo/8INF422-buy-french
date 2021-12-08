@@ -3,3 +3,7 @@
   padding: 10px!important;
   margin: 10px!important;
 }
+
+.subTitle, .title{
+  font-weight: bold;
+}

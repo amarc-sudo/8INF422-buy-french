@@ -1,0 +1,13 @@
+#commandInteraction{
+  text-align: right;
+}
+
+#commandInteraction h1{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#commandInteraction button{
+  max-width: 150px;
+  width: 100%
+}
