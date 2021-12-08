@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <div mat-card-avatar class="example-header-image"><img src="favicon.ico"></div>
-  <span>French buy</span>
+  <span style="padding-left: 10px;" >French buy</span>
 </mat-toolbar>
 
 <div class="row">
@@ -15,8 +15,8 @@
   <div class="col-8">
     <br/>
     <div class="row">
-      <div class="col-2">
-        <mat-form-field appearance="fill">
+      <div class="col-xl-4 col-6">
+        <mat-form-field [style.width.%]="100" appearance="fill">
           <mat-label>Trier par :</mat-label>
           <mat-select>
             <mat-option>Trier par :</mat-option>
@@ -26,10 +26,8 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="col-8">
-      </div>
-      <div class="col-2">
-        <mat-form-field appearance="fill">
+      <div class="col-xl-4 offset-xl-4 col-6">
+        <mat-form-field [style.width.%]="100" appearance="fill">
           <mat-label>Rechercher</mat-label>
           <input matInput>
         </mat-form-field>
