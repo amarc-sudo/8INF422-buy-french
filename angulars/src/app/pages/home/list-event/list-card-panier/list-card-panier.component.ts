@@ -63,13 +63,15 @@ export class ListCardPanierComponent implements OnInit {
 
   commander(): void{
     let commands: command = new command();
-
     commands.date = new Date();
     let objLinea = localStorage.getItem("user");
     commands.idUser = JSON.parse(<string>objLinea);
     objLinea = localStorage.getItem("panier");
     commands.products = JSON.parse(<string>objLinea);
     localStorage.removeItem('panier');
+    let products = new Array<product>();
+    objLinea = JSON.stringify(products);
+    localStorage.setItem("panier", objLinea);
     this.commandService.saveCommand(commands).subscribe();
     this.sendPanier.emit();
   }

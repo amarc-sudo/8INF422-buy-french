@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventService} from "../../../../service/api/event.service";
 import {Observable} from "rxjs";
 import {product} from "../../../../api/objects/product";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-list-card',
@@ -13,7 +14,7 @@ export class ListCardComponent implements OnInit {
   list$: Observable<product[]> | undefined;
   panier:Array<product> | any;
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.list$ = this.eventService.listEvent()
@@ -30,19 +31,22 @@ export class ListCardComponent implements OnInit {
   }
 
   addToPanier($event: any, index: number) {
-    console.log($event)
-    let products:Array<product>;
-    let objLinea;
-    if(localStorage.getItem('panier')) {
-      objLinea = localStorage.getItem("panier");
-      products = JSON.parse(<string>objLinea);
-    }else{
-      products = new Array<product>();
+    if(localStorage.getItem('isConnect')) {
+      let products: Array<product>;
+      let objLinea;
+      if (localStorage.getItem('panier')) {
+        objLinea = localStorage.getItem("panier");
+        products = JSON.parse(<string>objLinea);
+      } else {
+        products = new Array<product>();
+      }
+      if ($event) {
+        products.push($event);
+      }
+      objLinea = JSON.stringify(products);
+      localStorage.setItem("panier", objLinea);
+    } else {
+      this._snackBar.open('Veuillez vous connecter pour remplir un panier', 'x',{duration: 5 * 1000,});
     }
-    if ($event && products[index] == null) {
-      products.push($event);
-    }
-    objLinea = JSON.stringify(products);
-    localStorage.setItem("panier",objLinea);
   }
 }

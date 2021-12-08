@@ -35,6 +35,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { ListCardLivraisonComponent } from './pages/home/list-event/list-card-livraison/list-card-livraison.component';
 import { ListCardHistoryComponent } from './pages/home/list-event/list-card-history/list-card-history.component';
 import {FormsModule} from "@angular/forms";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +84,7 @@ import {FormsModule} from "@angular/forms";
     MatExpansionModule,
     GoogleMapsModule,
     FormsModule,
+    MatSnackBarModule,
   ],
   providers: [ HttpClientModule ],
   bootstrap: [AppComponent]

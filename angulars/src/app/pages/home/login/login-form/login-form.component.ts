@@ -5,6 +5,7 @@ import {tap} from "rxjs/operators";
 import {user} from '../../../../api/objects/user';
 import {userType} from "../../../../api/objects/userType";
 import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-login-form',
@@ -20,7 +21,7 @@ export class LoginFormComponent implements OnInit {
   newEmail: any;
   newPassword: any;
 
-  constructor(private userApi: UserService, private router: Router ) { }
+  constructor(private userApi: UserService, private router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -41,9 +42,12 @@ export class LoginFormComponent implements OnInit {
           this.router.navigate(['livraison']);
         }
       } else {
+        this._snackBar.open('mauvais mot de passe ou email', 'x',{duration: 5 * 1000,});;
         localStorage.removeItem('isConnect');
       }
     })).subscribe();
+
+
   }
 
   Inscription() {

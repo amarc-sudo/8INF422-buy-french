@@ -1,4 +1,4 @@
-deep/.mat-tab-label, deep/.mat-tab-label-active{
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
   min-width: 0!important;
   padding: 10px!important;
   margin: 10px!important;
@@ -6,4 +6,9 @@ deep/.mat-tab-label, deep/.mat-tab-label-active{
 
 .subTitle, .title{
   font-weight: bold;
+}
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+  min-width: 0!important;
+  padding: 3px!important;
+  margin: 3px!important;
 }
