@@ -22,10 +22,10 @@ services:
         build: ./spring
         container_name: french-buy-logic
         environment:
-            - DB_USER=u8inf422
-            - DB_PASSWORD=ThisBePassword
-            - DB_PORT=3306
-            - DB_NAME=u8inf422
+            DB_USER: u8inf422
+            DB_PASSWORD: ThisBePassword
+            DB_PORT: 3306
+            DB_NAME: u8inf422
         ports:
             - 8080:8080
         links:
