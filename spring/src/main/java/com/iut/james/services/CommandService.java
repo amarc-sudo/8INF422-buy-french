@@ -18,9 +18,9 @@ public class CommandService {
 
     public List<Command> getCommand(User mapInformations){
 
-        List<Command>products=commandRepository.findAllbyidUserOrderByDate(mapInformations);
+        List<Command>products=commandRepository.findAllByIdUserOrderByDate(mapInformations);
         System.out.println(products);
-        return commandRepository.findAllbyidUserOrderByDate(mapInformations);
+        return commandRepository.findAllByIdUserOrderByDate(mapInformations);
     }
 
     public List<Command> getAllCommand() {
