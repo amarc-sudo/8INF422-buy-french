@@ -28,7 +28,7 @@ public class Command {
 
     @Getter
     @Setter
-    @ManyToMany(cascade = {CascadeType.PERSIST})
+    @ManyToMany(cascade = {CascadeType.MERGE})
     @JoinTable(
             name = "productCommand",
             joinColumns = @JoinColumn(name = "commandID", referencedColumnName = "id"),
