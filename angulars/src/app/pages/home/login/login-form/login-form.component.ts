@@ -20,6 +20,7 @@ export class LoginFormComponent implements OnInit {
   phone: any;
   newEmail: any;
   newPassword: any;
+  selectedType: any;
 
   constructor(private userApi: UserService, private router: Router,private _snackBar: MatSnackBar) { }
 
@@ -53,8 +54,11 @@ export class LoginFormComponent implements OnInit {
   Inscription() {
     let newUser = new user();
     let newTypeUser = new userType();
-    newTypeUser.type="user";
-    newTypeUser.id=1;
+    newTypeUser.type=this.selectedType;
+    if(this.selectedType=='user')
+      newTypeUser.id=1;
+    else
+      newTypeUser.id=2;
     newUser.typeID=newTypeUser;
     newUser.mail=this.newEmail;
     newUser.phone=this.phone;
@@ -64,6 +68,15 @@ export class LoginFormComponent implements OnInit {
     newUser.salt="ah";
 
     console.log(newUser);
-    this.userApi.Inscription(newUser).pipe(tap(data => {})).subscribe();
+    this.userApi.Inscription(newUser).pipe(tap(data => {
+      localStorage.setItem('isConnect', 'true');
+      let objLinea = JSON.stringify(newUser);
+      localStorage.setItem("user",objLinea);
+      console.log(newUser.typeID)
+      if( newUser.typeID.type == 'deliver'){
+        localStorage.setItem('deliver', 'true');
+        this.router.navigate(['livraison']);
+      }
+    })).subscribe();
   }
 }

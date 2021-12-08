@@ -84,6 +84,18 @@
     </div>
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <div class="col-12">
+        <h4>Type d'utilisateur</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>type</mat-label>
+          <mat-select [(value)]="selectedType">
+            <mat-option value="user">Utilisateur</mat-option>
+            <mat-option value="deliver">Livreur</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row align-content-center align-items-center text-center justify-content-center">
+      <div class="col-12">
         <button (click)="Inscription();" mat-raised-button color="primary">Inscription</button>
 
       </div>
