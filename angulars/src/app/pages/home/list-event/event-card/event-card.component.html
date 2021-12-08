@@ -1,33 +1,30 @@
-<mat-card class="example-card" style="background-color: #e2e2e2">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"><img src="https://logodix.com/logo/545297.png" style="width :40px"></div>
-    <mat-card-title *ngIf="product?.name">{{product?.name}}</mat-card-title>
-    <mat-card-subtitle *ngIf="product?.idSeller?.name">sell by {{product?.idSeller?.name}}</mat-card-subtitle>
-  </mat-card-header><br/>
-  <mat-card-content>
-    <div class="row">
-      <div class="col-3" >
-        <img mat-card-image src="{{product?.photo}}" alt="image d'illustration"
-             style=" padding: 15px" class="align-content-center align-items-center text-center justify-content-center">
-      </div>
-      <div class="col-9">
-        <p>
-          Description : <br/>
-          {{product?.description}}</p>
-        <br/><br/>
-        <p>
-          Valeurs nutritionnelles : <br/>
-          {{product?.nutritionalValue}}
-        </p>
+<div class="col-12">
+  <mat-card class="example-card" style="background-color: #e2e2e2">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"><img src="https://logodix.com/logo/545297.png" style="width :40px"></div>
+      <mat-card-title *ngIf="product?.name">{{product?.name}}</mat-card-title>
+      <mat-card-subtitle *ngIf="product?.idSeller?.name">sell by {{product?.idSeller?.name}}</mat-card-subtitle>
+    </mat-card-header><br/>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-3" >
+          <img mat-card-image src="{{product?.photo}}" alt="image d'illustration"
+               style=" padding: 15px" class="align-content-center align-items-center text-center justify-content-center">
+        </div>
+        <div class="col-9">
+          <p>
+            Description : <br/>
+            {{product?.description}}</p>
+          <br/>
+          <p>
+            Valeurs nutritionnelles : <br/>
+            {{product?.nutritionalValue}}
+          </p>
 
+        </div>
       </div>
-    </div>
-  </mat-card-content>
-  <mat-card-actions  class="align-content-center align-items-center text-center justify-content-center">
-    <p> Prix : {{product?.price}} $ </p>
-    <button mat-raised-button color="primary">Ajouter au favoris</button>
-    <button mat-raised-button color="primary" (click)="addPanier()">Ajouter au panier</button>
-    <button mat-raised-button color="primary">Je n'aime pas</button>
-  </mat-card-actions>
-</mat-card>
-
+      <p class="price"> {{product?.price}} $ </p>
+      <button style="width: 100%" mat-raised-button color="primary" (click)="addPanier()">Ajouter au panier</button>
+    </mat-card-content>
+  </mat-card>
+</div>

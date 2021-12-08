@@ -1,0 +1,7 @@
+.price{
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  font-size: 35px;
+  font-weight: bold;
+}

@@ -5,13 +5,15 @@
     <mat-card-subtitle>sell by {{product?.idSeller?.name}}</mat-card-subtitle>
   </mat-card-header><br/>
   <mat-card-content>
-    <img mat-card-image src="{{product?.photo}}" alt="image d'illustration"
-         style="width: 40%" class="align-content-center align-items-center text-center justify-content-center">
+    <div class="row">
+      <div class="col-12">
+        <img mat-card-image class="img" src="{{product?.photo}}" alt="image d'illustration"
+             class="align-content-center align-items-center text-center justify-content-center">
+      </div>
+      <p class="price"> {{product?.price}} $ </p>
+    </div>
+    <!--
+    <button style="width: 100%;" mat-raised-button color="primary" flex="33">Ajouter au panier</button>
+    -->
   </mat-card-content>
-  <mat-card-actions  class="align-content-center align-items-center text-center justify-content-center">
-    <p> Prix : {{product?.price}} $ </p>
-    <button mat-raised-button color="primary" flex="33">Ajouter au favoris</button>
-    <button mat-raised-button color="primary" flex="33">Ajouter au panier</button>
-    <button mat-raised-button color="primary" flex="33">Je n'aime pas</button>
-  </mat-card-actions>
 </mat-card>

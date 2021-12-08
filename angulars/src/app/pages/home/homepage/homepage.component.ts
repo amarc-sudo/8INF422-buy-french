@@ -18,4 +18,10 @@ export class HomepageComponent implements OnInit {
     else
       return false
   }
+
+  Deconnexion():void{
+    localStorage.removeItem("user");
+    localStorage.removeItem("isConnect");
+  }
+
 }

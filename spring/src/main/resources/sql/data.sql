@@ -82,7 +82,7 @@ INSERT INTO `product` (`name`, `description`, `price`, `photo`, `nutritionalValu
 ('Galettes fines au beurre salé', 'La touche subtile de ces galettes croustillantes, c''est leur petite note salée, glanée dans les salines de Guérande. Des biscuits d''une finesse surprenante, harmonie légère et gourmande. Des galettes qui ont su rester nature.', 12.99, 'assets/media/200_01.jpg', 'Valeurs nutritionnelles moyennes pour 100 gr / Nutrition: typical values per 100 g: Énergie / Energy: 1 887 kJ - 451 kcal Matières grasses / Fat dont acides gras saturés / of which saturates: 24 g 15 g Glucides / Carbohydrate dont sucres / of which sugars: 54 g 27 g Protéines / Protein: 4,7 g Sel / Salt:1,3 g', 1),
 ('Baguette Française', 'Magnifique baguette croustillante à l''extérieur et moelleuse à l''intérieur', 8.99, 'assets/media/baguette.jpg', 'Pain', 3),
 ('Jambon de paris', 'Jambon parisien, parce que oui, les cochons de paris sont différent d''ici... ', 9.99, 'assets/media/Jambon_blanc_de_Paris.png', 'du fer ?', 4),
-('Madelaine St-Michel', 'Mini Madelaines française traditionnel', 6.99, 'assets/media/5e95f8859735b75c84f1ae99_Mini_20french_20sponge_20cake_20_St-Michel_800x.jpg,', 'Ben du beure pour ton petit coeur :)', 2),
+('Madelaine St-Michel', 'Mini Madelaines française traditionnel', 6.99, 'assets/media/5e95f8859735b75c84f1ae99_Mini_20french_20sponge_20cake_20_St-Michel_800x.jpg', 'Ben du beure pour ton petit coeur :)', 2),
 ('Canelé de bordeaux', 'Fait avec de la canelle et de l''alcool... Genre... ', 12.88, 'assets/media/1200px-Caneles_stemilion.jpg', 'probablement une valeur nutritive!', 3);
 
 INSERT INTO u8inf422.command (idUser, date, idDeliver) VALUES (1, '2021-12-07', null);

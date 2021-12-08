@@ -18,9 +18,4 @@ export class ConnectedComponent implements OnInit {
     let objLinea = localStorage.getItem("user");
     this.userConnected = JSON.parse(<string>objLinea);
   }
-  Deconnexion():void{
-      localStorage.removeItem("user");
-    localStorage.removeItem("isConnect");
-  }
-
 }

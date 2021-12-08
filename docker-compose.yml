@@ -34,12 +34,12 @@ services:
         depends_on:
             - french-buy-DB
         
-    french-buy-ui:
-        build: ./angulars
-        container_name: french-buy-ui
-        links:
-            - french-buy-logic
-        depends_on:
-            - french-buy-logic
-        ports:
-            - 4200:4200
+    #french-buy-ui:
+    #    build: ./angulars
+    #    container_name: french-buy-ui
+    #    links:
+    #        - french-buy-logic
+    #    depends_on:
+    #        - french-buy-logic
+    #    ports:
+    #        - 4200:4200

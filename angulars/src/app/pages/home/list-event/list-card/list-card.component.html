@@ -1,6 +1,6 @@
 <div class="recap" *ngIf="list$ | async as product">
   <div *ngFor="let element of product; index as indexOfelement;">
-    <app-event-card [product]="element" (productUser)="addToPanier($event, indexOfelement)"></app-event-card>
+    <app-event-card class="row" [product]="element" (productUser)="addToPanier($event, indexOfelement)"></app-event-card>
     <br/>
   </div>
 </div>

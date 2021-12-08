@@ -1,0 +1,12 @@
+#logo{
+  margin-left: 30px;
+}
+
+#logOut{
+  position: absolute;
+  right: 30px;
+}
+
+#logOut button{
+  background-color: black;
+}

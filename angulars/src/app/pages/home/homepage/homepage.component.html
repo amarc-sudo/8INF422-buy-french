@@ -1,6 +1,10 @@
 <mat-toolbar color="primary">
-  <div mat-card-avatar class="example-header-image"><img src="favicon.ico"></div>
+  <div id="logo" mat-card-avatar class="example-header-image"><img src="favicon.ico"></div>
   <span style="padding-left: 10px;" >French buy</span>
+
+  <div id="logOut" *ngIf="isConnect()">
+    <button (click)="Deconnexion()" mat-raised-button color="primary">Deconnexion</button>
+  </div>
 </mat-toolbar>
 
 <div class="row">
@@ -15,6 +19,7 @@
   <div class="col-8">
     <br/>
     <div class="row">
+    <!--
       <div class="col-xl-4 col-6">
         <mat-form-field [style.width.%]="100" appearance="fill">
           <mat-label>Trier par :</mat-label>
@@ -34,6 +39,7 @@
       </div>
     </div>
     <br/>
+    -->
     <app-list-card></app-list-card>
   </div>
 </div>
