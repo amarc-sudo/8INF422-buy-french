@@ -17,12 +17,11 @@ services:
             MARIADB_DATABASE: u8inf422
             MARIADB_ROOT_PASSWORD: ThisBeRootPassword
         restart: always
-            
+        
     french-buy-logic:
         build: ./spring
         container_name: french-buy-logic
         environment:
-            - DB_HOST=localhost
             - DB_USER=u8inf422
             - DB_PASSWORD=ThisBePassword
             - DB_PORT=3306
@@ -31,13 +30,15 @@ services:
             - 8080:8080
         links:
             - french-buy-DB
+        depends_on:
+            - french-buy-DB
         
     french-buy-ui:
         build: ./angulars
         container_name: french-buy-ui
-        depends_on:
-            - "french-buy-logic"
-        ports:
-            - 4200:4200
         links:
             - french-buy-logic
+        depends_on:
+            - french-buy-logic
+        ports:
+            - 4200:4200
