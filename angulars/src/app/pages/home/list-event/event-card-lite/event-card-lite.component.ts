@@ -13,6 +13,7 @@ export class EventCardLiteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('create')
   }
 
 }

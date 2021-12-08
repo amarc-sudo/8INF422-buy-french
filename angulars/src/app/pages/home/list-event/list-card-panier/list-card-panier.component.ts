@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {EventService} from "../../../../service/api/event.service";
 import {Observable} from "rxjs";
 import {product} from "../../../../api/objects/product";
 import {waitForAsync} from "@angular/core/testing";
 import {command} from "../../../../api/objects/command";
 import {CommandService} from "../../../../service/api/command.service";
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-card-panier',
@@ -14,7 +15,7 @@ import {CommandService} from "../../../../service/api/command.service";
 export class ListCardPanierComponent implements OnInit {
 
   list$: Array<product> | undefined;
-
+  @Output() sendPanier = new EventEmitter();
   constructor(private eventService: EventService, private commandService: CommandService) { }
 
   ngOnInit(): void {
@@ -70,5 +71,6 @@ export class ListCardPanierComponent implements OnInit {
     commands.products = JSON.parse(<string>objLinea);
     localStorage.removeItem('panier');
     this.commandService.saveCommand(commands).subscribe();
+    this.sendPanier.emit();
   }
 }

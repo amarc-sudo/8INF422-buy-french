@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
 import {product} from "../../api/objects/product";
 import {command} from "../../api/objects/command";
-import {user} from "../../api/objects/User";
+import {user} from "../../api/objects/user";
 
 @Injectable({
   providedIn: 'root'

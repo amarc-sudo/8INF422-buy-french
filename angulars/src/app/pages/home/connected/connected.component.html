@@ -1,7 +1,7 @@
 <mat-tab-group dynamicHeight mat-align-tabs="center" style="padding: 10px">
   <mat-tab label="Mon panier"><br/>
     <h1 class="title">Liste des articles</h1>
-    <app-list-card-panier></app-list-card-panier>
+    <app-list-card-panier (sendPanier)="refreshCommand()"></app-list-card-panier>
 
 
   </mat-tab>
@@ -29,6 +29,6 @@
   </mat-tab>
 
   <mat-tab label="Ancienne commande"><br/> <h1 class="title">Ancienne commande</h1> <br/>
-    <app-list-card-history></app-list-card-history>
+    <app-list-card-history [changed]="refresh"></app-list-card-history>
   </mat-tab>
 </mat-tab-group>

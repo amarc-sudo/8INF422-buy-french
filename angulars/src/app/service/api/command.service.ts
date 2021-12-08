@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
 import {product} from "../../api/objects/product";
-import {user} from "../../api/objects/User";
+import {user} from "../../api/objects/user";
 import {command} from "../../api/objects/command";
 
 @Injectable({
