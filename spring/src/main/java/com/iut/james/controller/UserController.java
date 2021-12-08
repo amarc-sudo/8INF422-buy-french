@@ -28,4 +28,12 @@ public class UserController {
         System.out.println(mapInformations.toString());
         return userService.login(login, password);
     }
+
+    @CrossOrigin
+    @PostMapping("inscription")
+    @ApiOperation("Renvoie un professeur qui a le login et le mot de passe donnés en paramètre")
+    public void inscription(@RequestBody User user) throws NoSuchAlgorithmException {
+        System.out.println(user.getPassword());
+        userService.generateUser(user);
+    }
 }

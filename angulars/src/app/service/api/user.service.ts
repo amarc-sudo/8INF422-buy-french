@@ -22,4 +22,10 @@ export class UserService extends ParentApiService {
     });
   }
 
+  Inscription(newUser: user) {
+    console.log(newUser);
+    return this.httpClient.post<user>(environment.apiUrl + '/rest/api/user/inscription',
+      newUser
+    );
+  }
 }
