@@ -32,4 +32,11 @@ public class CommandController {
     public List<Command> getall() {
         return productService.getAllCommand();
     }
+
+    @PostMapping("save")
+    @ApiOperation("Renvoie un professeur qui a le login et le mot de passe donnés en paramètre")
+    public void save(@RequestBody Command command) {
+        System.out.println(command.getDate() + " hellocreation de commande");
+        productService.saveCommand(command);
+    }
 }

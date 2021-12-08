@@ -3,6 +3,8 @@ import {EventService} from "../../../../service/api/event.service";
 import {Observable} from "rxjs";
 import {product} from "../../../../api/objects/product";
 import {waitForAsync} from "@angular/core/testing";
+import {command} from "../../../../api/objects/command";
+import {CommandService} from "../../../../service/api/command.service";
 
 @Component({
   selector: 'app-list-card-panier',
@@ -13,7 +15,7 @@ export class ListCardPanierComponent implements OnInit {
 
   list$: Array<product> | undefined;
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService, private commandService: CommandService) { }
 
   ngOnInit(): void {
     let objLinea = localStorage.getItem("panier");
@@ -56,5 +58,17 @@ export class ListCardPanierComponent implements OnInit {
       }
     }
     return somme;
+  }
+
+  commander(): void{
+    let commands: command = new command();
+
+    commands.date = new Date();
+    let objLinea = localStorage.getItem("user");
+    commands.idUser = JSON.parse(<string>objLinea);
+    objLinea = localStorage.getItem("panier");
+    commands.products = JSON.parse(<string>objLinea);
+    localStorage.removeItem('panier');
+    this.commandService.saveCommand(commands).subscribe();
   }
 }

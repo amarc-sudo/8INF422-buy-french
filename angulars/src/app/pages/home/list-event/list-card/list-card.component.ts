@@ -32,8 +32,13 @@ export class ListCardComponent implements OnInit {
   addToPanier($event: any, index: number) {
     console.log($event)
     let products:Array<product>;
-    let objLinea = localStorage.getItem("panier");
-    products = JSON.parse(<string>objLinea);
+    let objLinea;
+    if(localStorage.getItem('panier')) {
+      objLinea = localStorage.getItem("panier");
+      products = JSON.parse(<string>objLinea);
+    }else{
+      products = new Array<product>();
+    }
     if ($event && products[index] == null) {
       products.push($event);
     }

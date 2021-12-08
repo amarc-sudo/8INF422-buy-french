@@ -1,6 +1,7 @@
 package com.iut.james.services;
 
 import com.iut.james.beans.Command;
+import com.iut.james.beans.Product;
 import com.iut.james.beans.User;
 import com.iut.james.dao.CommandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,11 @@ public class CommandService {
         List<Command>products=commandRepository.findAll();
         System.out.println(products.toString());
         return products;
+    }
+
+    public void saveCommand(Command command){
+        List<Product> products = command.getProducts();
+        commandRepository.save(command);
+
     }
 }
