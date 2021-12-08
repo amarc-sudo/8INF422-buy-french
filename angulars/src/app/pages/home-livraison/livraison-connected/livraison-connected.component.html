@@ -5,65 +5,39 @@
 <mat-tab-group dynamicHeight mat-align-tabs="center" style="padding: 10px">
   <mat-tab label="Mes livraisons"><br/>
 
-    <mat-expansion-panel >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          A livrer aujourd'hui
-        </mat-panel-title>
-      </mat-expansion-panel-header><!--liste commande dans la bd--><br/><br/>
-        <button mat-raised-button color="primary">Mme. Rackso</button><br/><br/>
-        <button mat-raised-button color="primary">M. Rayou</button><br/><br/>
-        <button mat-raised-button color="primary">M. Stich</button>
-    </mat-expansion-panel>
+    <div class="recap" *ngIf="list$ | async as command">
+      <div *ngFor="let element of command.reverse()" class="panel">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{element.date}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
 
-    <mat-expansion-panel >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          A livrer demain
-        </mat-panel-title>
-      </mat-expansion-panel-header><br/><br/>
+            <button (click)="onClick(element)" mat-raised-button color="primary">{{element.idUser.lastName}} {{element.idUser.firstName}}</button>
 
-      <!--liste commande dans la bd-->
-        <button mat-raised-button color="primary">Mme. Rackso</button><br/><br/>
-        <button mat-raised-button color="primary">M. Rayou</button><br/><br/>
-        <button mat-raised-button color="primary">M. Stich</button>
+        </mat-expansion-panel>
+      </div>
+    </div>
 
-    </mat-expansion-panel>
-    <mat-expansion-panel >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          24 decembre 2021
-        </mat-panel-title>
-      </mat-expansion-panel-header><br/><br/>
-
-        <!--liste commande dans la bd-->
-        <button mat-raised-button color="primary">Mme. Rackso</button><br/><br/>
-        <button mat-raised-button color="primary">M. Rayou</button><br/><br/>
-        <button mat-raised-button color="primary">M. Stich</button>
-
-    </mat-expansion-panel>
   </mat-tab>
 
   <mat-tab label="Profil" ><br/>  <h1>Profil</h1> <br/>
 
     <img src="https://cdn.vox-cdn.com/thumbor/yyConGdwpTNyIBv-hN5Y1xQ2UPs=/72x0:779x471/1400x1400/filters:focal(72x0:779x471):format(png)/cdn.vox-cdn.com/assets/1279916/rickroll2.png" alt="Avatar" style="width:100px;  border-radius: 50%; border: 1px solid black">
 
-    <div class="row" style="padding-top: 50px">
-      <div class="col-6" style="text-align: left">
-
-        <p>Nom Prenom :</p><br/>
-        <p>Adresse Mail :</p><br/>
-        <p>Numero de telephone :</p><br/>
-        <p>Membre depuis :</p><br/>
-
-
+    <div class="row" style="padding-top: 30px">
+      <div class="col-6 subTitle" style="text-align: right">
+        <p>Nom Prenom :</p>
+        <p>Adresse Mail :</p>
+        <p>Numero de telephone :</p>
       </div>
-      <div class="col-5" style="text-align: right">
-        <br/>
-        <p>Florian PROFI</p><br/>
-        <p>flo.p@gmail.com</p><br/>
-        <p>(418) 514 - 5241</p><br/>
-        <p>2021-08-15</p><br/>
+      <div class="col-5" style="text-align: left">
+
+        <p>{{this.userConnected?.firstName}} {{this.userConnected?.lastName}}</p>
+        <p>{{userConnected?.mail}}</p>
+        <p>{{userConnected?.phone}}</p>
+
       </div>
     </div>
     <button mat-raised-button color="primary">Changer de mot de passe</button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {command} from "../../../api/objects/command";
 
 @Component({
   selector: 'app-livraison-home',
@@ -9,6 +10,7 @@ import {Router} from "@angular/router";
 export class LivraisonHomeComponent implements OnInit {
 
   constructor(private router: Router) { }
+  selectedCommand : command | undefined;
 
   ngOnInit(): void {
   }
@@ -25,5 +27,9 @@ export class LivraisonHomeComponent implements OnInit {
     localStorage.removeItem("isConnect");
     localStorage.removeItem('deliver')
     this.router.navigate(['/'])
+  }
+
+  sendToChild($event: command) {
+    this.selectedCommand = $event;
   }
 }

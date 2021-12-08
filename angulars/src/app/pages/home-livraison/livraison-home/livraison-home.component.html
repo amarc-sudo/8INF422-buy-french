@@ -14,11 +14,13 @@
         <app-livraison-connection></app-livraison-connection>
       </div>
       <div *ngIf="connect()">
-        <app-livraison-connected></app-livraison-connected>
+        <app-livraison-connected (emit)="sendToChild($event)"></app-livraison-connected>
       </div>
     </div>
   </div>
 <div class="col-8">
-  <app-livraison-commande-selec></app-livraison-commande-selec>
+  <div *ngIf="selectedCommand">
+    <app-livraison-commande-selec [command]="selectedCommand"></app-livraison-commande-selec>
+  </div>
 </div>
 </div>
