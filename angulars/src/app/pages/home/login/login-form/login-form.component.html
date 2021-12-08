@@ -33,34 +33,34 @@
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <mat-form-field appearance="fill">
         <mat-label>Prénom</mat-label>
-        <input matInput id="prenom"/>
+        <input matInput [(ngModel)]="firstName" id="prenom"/>
       </mat-form-field>
     </div>
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <mat-form-field appearance="fill">
         <mat-label>Nom</mat-label>
-        <input matInput id="nom"/>
+        <input matInput [(ngModel)]="lastName" id="nom"/>
       </mat-form-field>
     </div>
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <mat-form-field appearance="fill">
         <mat-label>mail</mat-label>
-        <input matInput id="mail"/>
+        <input matInput [(ngModel)]="newEmail" id="mail"/>
       </mat-form-field>
     </div>
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <mat-form-field appearance="fill">
         <mat-label>password</mat-label>
-        <input matInput id="passwd" type="password"/>
+        <input matInput [(ngModel)]="newPassword" id="passwd" type="password"/>
       </mat-form-field>
     </div>
     <div class="row align-content-center align-items-center text-center justify-content-center">
       <mat-form-field appearance="fill">
         <mat-label>numero de telephone</mat-label>
-        <input matInput id="num"/>
+        <input matInput [(ngModel)]="phone" id="num"/>
       </mat-form-field>
     </div>
-    <button mat-raised-button color="primary">Inscription</button>
+    <button (click)="Inscription();" mat-raised-button color="primary">Inscription</button>
   </mat-tab>
 
   <mat-tab label="Mot de passe oublié"><br/>
