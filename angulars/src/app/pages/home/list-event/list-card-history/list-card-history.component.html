@@ -8,11 +8,11 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div class="recap" *ngIf="listProd | async as product">
-        <div *ngFor="let element of product">
-          <app-event-card-lite [product]="element"></app-event-card-lite>
+
+        <div *ngFor="let element of element.products">
+          <app-event-card-lite [product]="element"></app-event-card-lite><br/>
         </div>
-      </div>
+
     </mat-expansion-panel>
 
   </div>
