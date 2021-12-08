@@ -1,7 +1,7 @@
 <div class="recap" *ngIf="list$ | async as command">
-  <div *ngFor="let element of command">
+  <div *ngFor="let element of command.reverse()" class="panel">
 
-    <mat-expansion-panel >
+    <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{element.date}}

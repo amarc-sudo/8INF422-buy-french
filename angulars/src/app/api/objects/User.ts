@@ -8,5 +8,5 @@ salt!:string;
 password!:string;
 mail!:string;
 phone!:string;
-typeId!:userType;
+typeID!:userType;
 }

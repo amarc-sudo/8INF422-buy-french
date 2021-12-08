@@ -4,6 +4,7 @@ import {tap} from "rxjs/operators";
 // @ts-ignore
 import {user} from '../../../../api/objects/user';
 import {userType} from "../../../../api/objects/userType";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -19,7 +20,7 @@ export class LoginFormComponent implements OnInit {
   newEmail: any;
   newPassword: any;
 
-  constructor(private userApi: UserService ) { }
+  constructor(private userApi: UserService, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -28,10 +29,17 @@ export class LoginFormComponent implements OnInit {
   connection() {
     this.userApi.login(this.email, this.password).pipe(tap(data => {
       if (data != null) {
+        let users: user = data
+        users.typeID = data.typeID;
         localStorage.setItem('isConnect', 'true');
         console.log(data)
         let objLinea = JSON.stringify(data);
         localStorage.setItem("user",objLinea);
+        console.log(users.typeID)
+        if( users.typeID.type == 'deliver'){
+          localStorage.setItem('deliver', 'true');
+          this.router.navigate(['livraison']);
+        }
       } else {
         localStorage.removeItem('isConnect');
       }
@@ -43,7 +51,7 @@ export class LoginFormComponent implements OnInit {
     let newTypeUser = new userType();
     newTypeUser.type="user";
     newTypeUser.id=1;
-    newUser.typeId=newTypeUser;
+    newUser.typeID=newTypeUser;
     newUser.mail=this.newEmail;
     newUser.phone=this.phone;
     newUser.firstName=this.firstName;

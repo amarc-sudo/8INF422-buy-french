@@ -1,15 +1,24 @@
 <mat-toolbar color="primary">
   <div mat-card-avatar class="example-header-image"><img src="../../../../favicon.ico"></div>
   <span>French buy - Livraison</span>
+
+  <div id="logOut" *ngIf="connect()">
+    <button (click)="Deconnexion()" mat-raised-button color="primary">Deconnexion</button>
+  </div>
 </mat-toolbar>
 
 <div class="row">
   <div class="col-4">
     <div class="align-items-center justify-content-center align-content-center text-center">
-      <app-livraison-connection></app-livraison-connection>
+      <div *ngIf="!connect()">
+        <app-livraison-connection></app-livraison-connection>
+      </div>
+      <div *ngIf="connect()">
+        <app-livraison-connected></app-livraison-connected>
+      </div>
     </div>
   </div>
-  <div class="col-8">
-    <app-livraison-commande-selec></app-livraison-commande-selec>
-  </div>
+<div class="col-8">
+  <app-livraison-commande-selec></app-livraison-commande-selec>
+</div>
 </div>
