@@ -9,7 +9,7 @@ import java.util.List;
 public interface CommandRepository extends JpaRepository<Command, Integer> {
     List<Command> findAll();
 
-    List<Command> findAllbyidUserOrderByDate(User mapInformations);
+    List<Command> findAllByIdUserOrderByDate(User user);
 
 
 
