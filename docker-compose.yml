@@ -23,6 +23,7 @@ services:
         container_name: french-buy-logic
         environment:
             DB_USER: u8inf422
+            DB_HOST: french-buy-DB
             DB_PASSWORD: ThisBePassword
             DB_PORT: 3306
             DB_NAME: u8inf422
