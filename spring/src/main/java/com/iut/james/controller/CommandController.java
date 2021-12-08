@@ -17,26 +17,26 @@ import java.util.List;
 public class CommandController {
 
     @Autowired
-    private CommandService productService;
+    private CommandService commandService;
 
     @CrossOrigin
     @PostMapping("getHistory")
     @ApiOperation("Renvoie un professeur qui a le login et le mot de passe donnés en paramètre")
     public List<Command> readByLoginAndPassword(@RequestBody User mapInformations) {
         System.out.println(mapInformations.toString());
-        return productService.getCommand(mapInformations);
+        return commandService.getCommand(mapInformations);
     }
 
     @GetMapping("getall")
     @ApiOperation("Renvoie un professeur qui a le login et le mot de passe donnés en paramètre")
     public List<Command> getall() {
-        return productService.getAllCommand();
+        return commandService.getAllCommand();
     }
 
     @PostMapping("save")
     @ApiOperation("Renvoie un professeur qui a le login et le mot de passe donnés en paramètre")
     public void save(@RequestBody Command command) {
         System.out.println(command.getDate() + " hellocreation de commande");
-        productService.saveCommand(command);
+        commandService.saveCommand(command);
     }
 }
