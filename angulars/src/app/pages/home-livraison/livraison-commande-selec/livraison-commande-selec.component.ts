@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {} from 'googlemaps';
+import {command} from "../../../api/objects/command";
 @Component({
   selector: 'app-livraison-commande-selec',
   templateUrl: './livraison-commande-selec.component.html',
@@ -8,7 +9,7 @@ import {} from 'googlemaps';
 export class LivraisonCommandeSelecComponent implements OnInit {
 
 
-
+  @Input() command : command | undefined;
   constructor() { }
 
   ngOnInit(): void {

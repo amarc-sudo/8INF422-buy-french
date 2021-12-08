@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {EventService} from "../../../../service/api/event.service";
 import {Observable} from "rxjs";
 import {product} from "../../../../api/objects/product";
@@ -11,7 +11,7 @@ import {product} from "../../../../api/objects/product";
 export class ListCardLivraisonComponent implements OnInit {
 
   list$: Array<product> | undefined;
-
+  @Input() products : Array<product> | undefined;
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {

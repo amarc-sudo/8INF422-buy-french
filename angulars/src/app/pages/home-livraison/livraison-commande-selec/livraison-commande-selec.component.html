@@ -1,8 +1,8 @@
 <mat-card class="example-card" style="background-color: #FFFFFF">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"><img src="https://logodix.com/logo/545297.png" style="width :40px"></div><!--pp client-->
-    <mat-card-title> Livraison Au 28 rue des chateau a Chicoutimi </mat-card-title>
-    <mat-card-subtitle>Pour M.Rackso</mat-card-subtitle>
+    <mat-card-title> Livraison pour {{command?.idUser?.lastName}} {{command?.idUser?.firstName}} </mat-card-title>
+
   </mat-card-header><br/>
   <mat-card-content>
     <div>
@@ -13,7 +13,7 @@
         <div mat-card-avatar class="example-header-image"><img src="../../../../favicon.ico"></div>
         <mat-card-title> Liste des articles</mat-card-title>
       </mat-card-header><br/>
-      <app-list-card-livraison></app-list-card-livraison>
+      <app-list-card-livraison [products]="command?.products"></app-list-card-livraison>
     </mat-card>
   </mat-card-content>
   <mat-card-actions  class="align-content-center align-items-center text-center justify-content-center">

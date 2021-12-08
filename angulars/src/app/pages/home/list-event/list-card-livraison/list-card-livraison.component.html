@@ -1,6 +1,6 @@
-<div class="recap" *ngIf="list$ ">
-  <div *ngFor="let element of list$">
-    <app-event-card-livraison [product]="element"></app-event-card-livraison>
+<div class="recap" *ngIf="products ">
+  <div *ngFor="let element of products">
+    <app-event-card-lite [product]="element"></app-event-card-lite>
     <br/>
   </div>
 </div>

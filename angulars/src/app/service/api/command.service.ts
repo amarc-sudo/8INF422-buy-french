@@ -22,6 +22,10 @@ export class CommandService extends ParentApiService {
     return this.httpClient.post<Array<command>>(environment.apiUrl + '/rest/api/Command/getHistory',users);
   }
 
+  listCommandAll(): Observable<Array<command>> {
+    return this.httpClient.get<Array<command>>(environment.apiUrl + '/rest/api/Command/getall');
+  }
+
   saveCommand(commands:command): Observable<void> {
     return this.httpClient.post<void>(environment.apiUrl + '/rest/api/Command/save',commands);
   }
