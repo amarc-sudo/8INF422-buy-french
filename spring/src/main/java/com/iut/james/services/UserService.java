@@ -29,7 +29,7 @@ public class UserService {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        User user = userDao.findUserByPasswordAndMailAndTypeID(passwordCrypt, login, userTypeDao.getUserTypeByType("user"));
+        User user = userDao.findUserByPasswordAndMail(passwordCrypt, login);
         return user;
     }
 

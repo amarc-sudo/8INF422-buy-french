@@ -66,10 +66,11 @@ ALTER TABLE `productCommand` ADD FOREIGN KEY (`productID`) REFERENCES `product` 
 
 ALTER TABLE `productCommand` ADD FOREIGN KEY (`commandID`) REFERENCES `command` (`id`);
 
-INSERT INTO u8inf422.userType (type) VALUES ('user');
+INSERT INTO u8inf422.userType (type) VALUES ('user'),('deliver');
 
 INSERT INTO u8inf422.user (firstName, lastName, salt, password, mail, phone, typeID) VALUES
-('ss', 'ss', 'ss', '8f60c8102d29fcd525162d02eed4566b', 'ss', 'ss', 1);
+('Florian', 'Tremblay', 'ss', '8f60c8102d29fcd525162d02eed4566b', 'florian@icloud.com', '+33 7 81 03 68 56', 1),
+('Maxim', 'Girard', 'salt', 'c82a365250565c8dcb605f9e50c84dd4', 'maxim@icloud.com', '+1 (418) 506-0020', 2);;
 
 INSERT INTO `seller` (`name`, `lat`, `long`) VALUES
 ('La Charcuterie de la Gare', 48.4294881460894, -71.05446135431934),
